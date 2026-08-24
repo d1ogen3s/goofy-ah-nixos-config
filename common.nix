@@ -59,6 +59,7 @@
 		nodejs_26
 		docker-compose
 		firefox
+		localsend
 
 		gcc
 
