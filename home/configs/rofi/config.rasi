@@ -1,0 +1,3 @@
+//@theme "~/.config/rofi/themes/simple-tokyonight.rasi"
+
+@theme "/home/johndoe/.config/rofi/themes/simple-tokyonight.rasi"

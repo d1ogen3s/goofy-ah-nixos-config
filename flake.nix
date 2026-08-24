@@ -7,8 +7,16 @@
 			url = "github:nix-community/home-manager";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
+		sops-nix = {
+			url = "github:Mic92/sops-nix";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
 		zen-browser = {
 			url = "github:youwen5/zen-browser-flake";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
+		openclaw-nix = {
+			url = "github:openclaw/nix-openclaw";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 	};
@@ -27,8 +35,12 @@
 					home-manager = {
 						useGlobalPkgs = true;
 						useUserPackages = true;
-						users.johndoe = import ./home.nix;
+						users.johndoe = import ./home/home.nix;
 						backupFileExtension = "backup";
+						extraSpecialArgs = {
+							flakePath = "/home/johndoe/.nixos-config";
+							inherit inputs;
+						};
 					};
 				}
 			];

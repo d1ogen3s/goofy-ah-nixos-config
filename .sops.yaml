@@ -1,0 +1,9 @@
+keys:
+  - &age_key age1chtdsjewp3qr8a9whsyqazy7g0fdvwz0wm8l3dnc3y3pz36nv92q8ef7qq
+
+creation_rules:
+  # Any file inside the 'secrets' folder ending in .yaml will be encrypted
+  - path_regex: secrets/.*\.json$
+    key_groups:
+    - age:
+      - *age_key

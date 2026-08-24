@@ -7,6 +7,10 @@
 
 	networking.hostName = "obr";
 
+	environment.shellAliases = {
+		nrs = "git -C ~/.nixos-config/ add . && sudo nixos-rebuild switch --flake ~/.nixos-config#obr";
+	};
+
 	environment.systemPackages = with pkgs; [
 		nvtopPackages.nvidia
 	];

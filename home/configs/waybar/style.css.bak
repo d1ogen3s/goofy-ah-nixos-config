@@ -1,0 +1,101 @@
+/* Global settings using relative units */
+@import "../../.cache/wal/colors-waybar.css";
+
+* {
+    font-family: "JetBrainsMono Nerd Font", "Font Awesome 6 Free", sans-serif;
+    font-size: 0.95rem; /* ~13.5px on a 1x scaled 1080p monitor, scales up on 4K */
+    font-weight: bold;
+    border: none;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+}
+
+window#waybar {
+    background-color: rgba(0,0,0,0);
+}
+
+/* Base pill styling */
+.modules-left,
+.modules-center,
+.modules-right {
+    color: #c0c0c0; 
+    border-radius: 10;
+    background-color: #111;
+    border: 2 solid #999;
+    padding: 0.5em 0.25em;
+    margin: 0.35em 4 0 4; 
+}
+
+/* Internal padding relative to font size */
+#workspaces,
+#window,
+#clock,
+#cpu,
+#memory,
+#custom-gpu,
+#pulseaudio,
+#battery,
+#network,
+#bluetooth,
+#custom-separator {
+    padding: 0 0.6em;
+}
+
+/* --- Workspaces --- */
+#workspaces button {
+    color: #404040; 
+    padding: 0 0.3em;
+    background: transparent;
+    transition: color 0.2s ease;
+}
+
+#workspaces button.active {
+    color: #ffffff; 
+}
+
+#workspaces button:hover {
+    color: #a0a0a0;
+    box-shadow: none;
+    text-shadow: none;
+}
+
+/* --- Separators --- */
+#custom-separator {
+    color: #333333; 
+    padding: 0 0.3em;
+}
+
+/* --- Module Text (Monochrome) --- */
+#clock,
+#cpu, 
+#memory, 
+#custom-gpu,
+#pulseaudio,
+#battery,
+#network, 
+#bluetooth,
+#window {
+    color: #d0d0d0; 
+}
+
+/* --- Essential Colors Only --- */
+#pulseaudio.muted {
+    color: #cc6666; 
+}
+
+#network.disconnected {
+    color: #cc6666; 
+}
+
+#battery.warning {
+    color: #d7ba7d; 
+}
+
+#battery.critical {
+    color: #cc6666; 
+}
+
+#battery.charging, #battery.plugged {
+    color: #8abeb7; 
+}

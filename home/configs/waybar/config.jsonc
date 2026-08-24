@@ -1,0 +1,59 @@
+{
+    "layer": "top",
+    "position": "top",
+    "spacing": 0,
+
+    "modules-left": [
+        "hyprland/workspaces"
+    ],
+    "modules-center": [
+    ],
+    "modules-right": [
+        "clock",
+        "pulseaudio",
+        "battery",
+        "network",
+        "bluetooth"
+    ],
+
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "format": "{name}",
+	"sort-by-number": true
+    },
+
+    "clock": {
+        "format": "{:%H:%M}",
+	"tooltip": false
+    },
+
+    "pulseaudio": {
+        "format": "VOL {volume}%",
+        "format-muted": "VOL X",
+        "on-click": "pavucontrol"
+    },
+
+    "battery": {
+        "states": {
+            "warning": 25,
+            "critical": 10
+        },
+        "format": "BAT {capacity}%",
+        "tooltip": false
+    },
+
+    "network": {
+        "format-wifi": "",
+        "format-ethernet": "󰈀",
+        "format-disconnected": "⚠",
+        "tooltip-format": "{essid} ({signalStrength}%)"
+    },
+
+    "bluetooth": {
+        "format": "",
+        "format-connected": "",
+        "format-disabled": "󰂲",
+        "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected"
+    },
+}

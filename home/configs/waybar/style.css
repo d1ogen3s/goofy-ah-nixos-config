@@ -1,0 +1,65 @@
+/* Global settings using relative units */
+
+* {
+	font-family: "JetBrainsMono Nerd Font", "Font Awesome 6 Free", sans-serif;
+	font-size: 0.95rem; /* ~13.5px on a 1x scaled 1080p monitor, scales up on 4K */
+	font-weight: bold;
+	border: none;
+	min-height: 0;
+	margin: 0;
+	padding: 0;
+}
+
+window#waybar {
+	background-color: #141414;
+	color: #ffffff;
+}
+
+/* Base pill styling */
+.modules-left,
+.modules-center,
+.modules-right {
+	padding: .4em;
+}
+
+/* Internal padding relative to font size */
+#workspaces,
+#clock,
+#pulseaudio,
+#battery,
+#network,
+#bluetooth,
+#custom-separator {
+	padding: 0 0.6em;
+}
+
+/* --- Workspaces --- */
+#workspaces button {
+	color: alpha(#ffffff, 0.8); 
+	padding: 0 0.3em;
+	background: transparent;
+	transition: color 0.2s ease;
+}
+
+#workspaces button.active {
+	color: #ffffff; 
+}
+
+#workspaces button:hover {
+	background: inherit;
+	box-shadow: inherit;
+	text-shadow: inherit;
+	border: inherit;
+}
+
+#battery.warning {
+	color: #d7ba7d; 
+}
+
+#battery.critical {
+	color: #cc6666; 
+}
+
+#battery.charging, #battery.plugged {
+	color: inherit; 
+}
