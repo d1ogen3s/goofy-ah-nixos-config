@@ -157,7 +157,8 @@ hl.animation({ leaf = "zoomFactor", enabled = true, speed = 7, bezier = "quick" 
 
 local default_workspace_monitor = "HDMI-A-1"
 local workspace_monitors = {
-	[3] = "eDP-1"
+	[5] = "eDP-1",
+	[6] = "eDP-1"
 }
 
 for i = 2, 10 do

@@ -4,7 +4,7 @@
 	imports = [
 		./modules/sddm.nix
 		./modules/docker.nix
-		./modules/omniroute.nix
+		#./modules/omniroute.nix
 	];
 
 	boot.loader.systemd-boot.enable = true;
@@ -32,13 +32,30 @@
 
 	services.libinput.enable = true;
 
+	swapDevices = [{
+		device = "/swapfile";
+		size = 16 * 1024; # 16GB
+	}];
+
 	users.users.johndoe = {
 		isNormalUser = true;
 		extraGroups = [ "wheel" ];
 		packages = with pkgs; [ ];
 	};
+
+	environment.sessionVariables = {
+		AQ_DRM_DEVICES = "/dev/dri/card2:/dev/dri/card1";
+	};
+
+	services.thermald.enable = true;
+	services.power-profiles-daemon.enable = false;
 	
 	environment.systemPackages = with pkgs; [
+		bc
+		libreoffice
+		fastfetch
+		lm_sensors
+		hyprshot
 		vim
 		wget
 		git
@@ -69,7 +86,6 @@
 	fonts.packages = with pkgs; [
 		nerd-fonts.jetbrains-mono
 	];
-
 
 	environment.pathsToLink = [ "/share/applications" "/share/xdg-desktop-portal" ];
 
