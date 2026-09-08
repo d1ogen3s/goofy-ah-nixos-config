@@ -22,12 +22,6 @@
 		options dell-smm-hwmon restricted=0 force=1 ignore_dmi=1
 	'';
 
-	nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-		"nvidia-x11"
-		"cuda_nvml_dev"
-		"nvidia-settings"
-	];
-
 	services.xserver.videoDrivers = ["nvidia"];
 
 
