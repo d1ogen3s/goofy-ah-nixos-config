@@ -47,12 +47,17 @@
 		AQ_DRM_DEVICES = "/dev/dri/card2:/dev/dri/card1";
 	};
 
+	programs.ssh.enableAskPassword = false;
+
 	services.thermald.enable = true;
 	services.power-profiles-daemon.enable = false;
 
 	services.gvfs.enable = true;
 
+	nixpkgs.config.allowUnfree = true;
+
 	environment.systemPackages = with pkgs; [
+		discord-canary
 		yazi
 		android-file-transfer
 		kdePackages.dolphin
@@ -67,7 +72,6 @@
 		git
 		kitty
 		tmux
-		gh
 		waybar
 		awww
 		fzf
@@ -88,6 +92,8 @@
 
 		inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
 	];
+
+
 
 	fonts.packages = with pkgs; [
 		nerd-fonts.jetbrains-mono

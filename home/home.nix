@@ -8,12 +8,14 @@ in
 		./modules/nvim.nix
 		./modules/sops.nix
 		./modules/aider.nix
+		./modules/fzf.nix
+		./modules/gh.nix
 
 		inputs.sops-nix.homeManagerModules.sops
 	];
 
 	programs.git.enable = true;
-	programs.bash = { enable = true; };
+	programs.bash.enable = true;
 
 	xdg.configFile."hypr".source = config.lib.file.mkOutOfStoreSymlink "${configsPath}/hypr";
 	xdg.configFile."tmux".source = config.lib.file.mkOutOfStoreSymlink "${configsPath}/tmux";
@@ -35,5 +37,6 @@ in
 			gtk.enable = true;
 			x11.enable = true;
 		};
+
 	};
 }
