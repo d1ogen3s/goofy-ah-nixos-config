@@ -176,7 +176,8 @@ end
 hl.config({
 	input = {
 		kb_layout = "us,cz",
-		kb_variant = ",qwerty",
+		--kb_variant = ",qwerty",
+		kb_variant = ",",
 		kb_model = "",
 		kb_options = "grp:alt_shift_toggle,caps:swapescape",
 		kb_rules = "",
