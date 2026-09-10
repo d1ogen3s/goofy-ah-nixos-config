@@ -15,14 +15,12 @@ window#waybar {
 	color: #ffffff;
 }
 
-/* Base pill styling */
 .modules-left,
 .modules-center,
 .modules-right {
 	padding: .4em;
 }
 
-/* Internal padding relative to font size */
 #workspaces,
 #clock,
 #pulseaudio,
@@ -33,9 +31,8 @@ window#waybar {
 	padding: 0 0.6em;
 }
 
-/* --- Workspaces --- */
 #workspaces button {
-	color: alpha(#ffffff, 0.8); 
+	color: alpha(#ffffff, 0.4); 
 	padding: 0 0.3em;
 	background: transparent;
 	transition: color 0.2s ease;
@@ -58,8 +55,4 @@ window#waybar {
 
 #battery.critical {
 	color: #cc6666; 
-}
-
-#battery.charging, #battery.plugged {
-	color: inherit; 
 }

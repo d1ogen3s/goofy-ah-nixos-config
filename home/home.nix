@@ -2,6 +2,7 @@
 
 let
 	configsPath = "${flakePath}/home/configs";
+	homePath = "${flakePath}/home";
 in
 {
 	imports = [
@@ -16,6 +17,8 @@ in
 
 	programs.git.enable = true;
 	programs.bash.enable = true;
+
+	home.file.".scripts".source = config.lib.file.mkOutOfStoreSymlink "${homePath}/scripts";
 
 	xdg.configFile."hypr".source = config.lib.file.mkOutOfStoreSymlink "${configsPath}/hypr";
 	xdg.configFile."tmux".source = config.lib.file.mkOutOfStoreSymlink "${configsPath}/tmux";

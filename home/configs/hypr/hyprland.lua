@@ -35,7 +35,7 @@ local menu = "rofi"
 -------------------
 
 hl.on("hyprland.start", function()
---	hl.exec_cmd("awww-daemon")
+	hl.exec_cmd("awww-daemon")
 --	hl.exec_cmd("hypridle")
 	hl.exec_cmd("sh -c 'sleep 1 && hyprctl dispatch workspace 1'")
 	hl.exec_cmd("waybar")
@@ -223,8 +223,9 @@ hl.bind(mainMod .. " + E", hl.dsp.exec_cmd("zen"))
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen())
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("bzmenu --launcher " .. menu))
-hl.bind(mainMod .. " + Y", hl.dsp.exec_cmd("iwmenu --launcher " .. menu))
-hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("~/.config/hypr/scripts/wallpaper-picker.sh"))
+hl.bind(mainMod .. " + Y", hl.dsp.exec_cmd("sh ~/.scripts/network-manager.sh --only-wifi"))
+hl.bind(mainMod .. " + SHIFT + Y", hl.dsp.exec_cmd("sh ~/.scripts/network-manager.sh"))
+hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("sh ~/.scripts/wallpaper-picker.sh"))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("pkill waybar; waybar &"))
 
 -- Screenshots

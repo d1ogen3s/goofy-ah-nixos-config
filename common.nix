@@ -22,6 +22,7 @@
 
 	services.printing.enable = true;
 
+	security.rtkit.enable = true;
 	services.pipewire = {
 		enable = true;
 		pulse.enable = true;
@@ -52,10 +53,9 @@
 	services.thermald.enable = true;
 	services.power-profiles-daemon.enable = false;
 	
-	nixpkgs.config.allowUnfree = true;
-
 	environment.systemPackages = with pkgs; [
-		discord-canary
+		playerctl
+		awww
 		bc
 		libreoffice
 		fastfetch

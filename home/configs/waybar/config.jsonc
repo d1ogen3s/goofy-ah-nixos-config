@@ -1,59 +1,66 @@
 {
-    "layer": "top",
-    "position": "top",
-    "spacing": 0,
+	"layer": "top",
+	"position": "top",
+	"spacing": 0,
 
-    "modules-left": [
-        "hyprland/workspaces"
-    ],
-    "modules-center": [
-    ],
-    "modules-right": [
-        "clock",
-        "pulseaudio",
-        "battery",
-        "network",
-        "bluetooth"
-    ],
+	"modules-left": [
+		"hyprland/workspaces",
+		"custom/media"
+	],
+	"modules-center": [
+		"clock"
+	],
+	"modules-right": [
+		"pulseaudio",
+		"battery",
+		"network",
+		"bluetooth"
+	],
 
-    "hyprland/workspaces": {
-        "disable-scroll": true,
-        "all-outputs": true,
-        "format": "{name}",
-	"sort-by-number": true
-    },
+	"hyprland/workspaces": {
+		"disable-scroll": true,
+		"all-outputs": true,
+		"format": "{name}",
+		"sort-by-number": true
+	},
 
-    "clock": {
-        "format": "{:%H:%M}",
-	"tooltip": false
-    },
+	"custom/media": {
+		"format": "  {}",
+		"exec": "while true; do playerctl metadata --format '{{artist}} - {{title}}'; done",
+		"return-type": "json"
+	},
 
-    "pulseaudio": {
-        "format": "VOL {volume}%",
-        "format-muted": "VOL X",
-        "on-click": "pavucontrol"
-    },
+	"clock": {
+		"format": "{:%H:%M}",
+		"tooltip": false
+	},
 
-    "battery": {
-        "states": {
-            "warning": 25,
-            "critical": 10
-        },
-        "format": "BAT {capacity}%",
-        "tooltip": false
-    },
+	"pulseaudio": {
+		"format": "VOL {volume}%",
+		"format-muted": "VOL X",
+		"on-click": "pavucontrol"
+	},
 
-    "network": {
-        "format-wifi": "",
-        "format-ethernet": "󰈀",
-        "format-disconnected": "⚠",
-        "tooltip-format": "{essid} ({signalStrength}%)"
-    },
+	"battery": {
+		"states": {
+			"warning": 25,
+			"critical": 10
+		},
+		"format": "BAT {capacity}%",
+		"tooltip": false
+	},
 
-    "bluetooth": {
-        "format": "",
-        "format-connected": "",
-        "format-disabled": "󰂲",
-        "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected"
-    },
+	"network": {
+		"format-wifi": "WIFI {essid}",
+		"format-ethernet": "ETH",
+		"format-disconnected": "404"
+	},
+
+	"bluetooth": {
+		"format": "",
+		"format-connected": "BT {device_alias}",
+		"format-disabled": "BT OFF",
+		"format-off": "BT OFF",
+		"format-on": "BT ON"
+	}
 }

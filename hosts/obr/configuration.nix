@@ -24,6 +24,11 @@
 
 	services.xserver.videoDrivers = ["nvidia"];
 
+	nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+		"nvidia-x11"
+		"cuda_nvml_dev"
+		"nvidia-settings"
+	];
 
 	environment.sessionVariables = {
 		LIBVA_DRIVER_NAME = "nvidia";
