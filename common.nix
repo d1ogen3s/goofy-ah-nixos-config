@@ -53,9 +53,15 @@
 	services.thermald.enable = true;
 	services.power-profiles-daemon.enable = false;
 	
+	services.gvfs.enable = true;
+
 	environment.systemPackages = with pkgs; [
 		playerctl
 		awww
+		yazi
+		android-file-transfer
+		kdePackages.dolphin
+		kdePackages.kio-extras
 		bc
 		libreoffice
 		fastfetch
